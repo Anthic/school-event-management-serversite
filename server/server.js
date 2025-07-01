@@ -7,13 +7,10 @@ const eventRoutes = require("./routes/eventRouters");
 const app = express();
 
 
-if (!process.env.CLIENT_URL) {
-  throw new Error('CLIENT_URL is not defined in .env file!');
-}
-const allowedOrigins = process.env.CLIENT_URL.split(",");
+
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin:process.env.CLIENT_URL,
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -27,6 +24,7 @@ app.use("/api/auth", require("./routes/authRoutes"));
 
 //events add routers
 app.use("/api", eventRoutes);
+
 app.use("/api", require("./routes/userRouters"));
 
 //connect to mongodb
