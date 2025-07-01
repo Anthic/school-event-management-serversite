@@ -1,0 +1,21 @@
+{
+  "name": "school-event-management-serversite",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+    
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.30.0",
+    "nodemon": "^3.0.1"
+  }
+}
