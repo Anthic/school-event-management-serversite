@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,6 +6,10 @@ const eventRoutes = require("./routes/eventRouters");
 
 const app = express();
 
+
+if (!process.env.CLIENT_URL) {
+  throw new Error('CLIENT_URL is not defined in .env file!');
+}
 const allowedOrigins = process.env.CLIENT_URL.split(",");
 app.use(
   cors({
