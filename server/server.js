@@ -19,13 +19,7 @@ app.use(
 
 app.use(express.json());
 
-//user add routers
-app.use("/api/auth", require("./routes/authRoutes"));
-
-//events add routers
-app.use("/api", eventRoutes);
-
-app.use("/api", require("./routes/userRouters"));
+app.use("/api", require("./routes"));
 
 //connect to mongodb
 mongoose
